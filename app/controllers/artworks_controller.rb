@@ -29,7 +29,7 @@ class ArtworksController < ApplicationController
       redirect_to @artwork
     else
       flash[:errors] = @artwork.errors.full_messages
-      redirect_to new_artwork_path
+      redirect_to new_artwork_path # go back to add artwork form
     end
   end
 
@@ -79,7 +79,7 @@ class ArtworksController < ApplicationController
   
   def artwork_params
     # byebug
-    params.require(:artwork).permit(:title, :img_url, :price, :for_sale, :object_type_id, :user_id)
+    params.require(:artwork).permit(:title, :img_url, :image, :price, :for_sale, :object_type_id, :user_id)
   end
 
 
